@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/dwy/develop/db/mongodb/deploy/shell'
-let g:netrw_dirhist_2='/dwy/develop/logging/log4cplus.build/include/log4cplus'
-let g:netrw_dirhist_3='/dwy/develop/blog/workdoc/source'
-let g:netrw_dirhist_4='/home/wgwang/develop'
-let g:netrw_dirhist_5='/home/wgwang/.config/chromium'
-let g:netrw_dirhist_6='/home/wgwang/.config/chromium/Default'
-let g:netrw_dirhist_7='/dwy/develop/moin2/wiki/wiki'
+let g:netrw_dirhist_cnt =0
