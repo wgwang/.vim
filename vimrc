@@ -70,6 +70,7 @@ au FileType xml setlocal foldmethod=syntax
 
 let vimrplugin_screenplugin = 0
 
+autocmd bufnewfile *.py :0r ~/.vim/templates/python.py
 
 map <C-n> :bnext<CR>
 imap <f2> <ESC><CR>
