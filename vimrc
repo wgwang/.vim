@@ -67,6 +67,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
+au FileType javascript call JavaScriptFold()
 
 let vimrplugin_screenplugin = 0
 
