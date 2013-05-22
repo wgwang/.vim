@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#coding: utf8
+#coding: utf-8
 # by wgwang svd.wang@gmail.com
 # 
 
