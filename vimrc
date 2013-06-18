@@ -42,7 +42,7 @@ if has("autocmd")
     autocmd bufnewfile *.py :0r ~/.vim/templates/python.py
 
     let g:xml_syntax_folding=1
-    autocmd FileType xml setlocal foldmethod=syntax
+    autocmd FileType xml setlocal foldmethod=syntax ts=2 sw=2 sts=2 et
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
     
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
