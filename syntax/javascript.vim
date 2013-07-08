@@ -23,14 +23,10 @@ if version < 600 && exists("javaScript_fold")
   unlet javaScript_fold
 endif
 
-"" dollar sign is permitted anywhere in an identifier
+"" dollar sigh is permittd anywhere in an identifier
 setlocal iskeyword+=$
 
 syntax sync fromstart
-
-"" syntax coloring for Node.js shebang line
-syn match shebang "^#!.*/bin/env\s\+node\>"
-hi link shebang Comment
 
 "" JavaScript comments"{{{
 syn keyword javaScriptCommentTodo      TODO FIXME XXX TBD contained
@@ -171,7 +167,7 @@ endif "DOM/HTML/CSS
 
 
 "" Code blocks
-syntax cluster javaScriptAll       contains=javaScriptComment,javaScriptLineComment,javaScriptDocComment,javaScriptStringD,javaScriptStringS,javaScriptRegexpString,javaScriptNumber,javaScriptFloat,javaScriptLabel,javaScriptSource,javaScriptType,javaScriptOperator,javaScriptBoolean,javaScriptNull,javaScriptFuncKeyword,javaScriptConditional,javaScriptGlobal,javaScriptRepeat,javaScriptBranch,javaScriptStatement,javaScriptGlobalObjects,javaScriptMessage,javaScriptIdentifier,javaScriptExceptions,javaScriptReserved,javaScriptDeprecated,javaScriptDomErrNo,javaScriptDomNodeConsts,javaScriptHtmlEvents,javaScriptDotNotation,javaScriptBrowserObjects,javaScriptDOMObjects,javaScriptAjaxObjects,javaScriptPropietaryObjects,javaScriptDOMMethods,javaScriptHtmlElemProperties,javaScriptDOMProperties,javaScriptEventListenerKeywords,javaScriptEventListenerMethods,javaScriptAjaxProperties,javaScriptAjaxMethods,javaScriptFuncArg
+syntax cluster javaScriptAll       contains=javaScriptComment,javaScriptLineComment,javaScriptDocComment,javaScriptStringD,javaScriptStringS,javaScriptRegexpString,javaScriptNumber,javaScriptFloat,javaScriptLabel,javaScriptSource,javaScriptType,javaScriptOperator,javaScriptBoolean,javaScriptNull,javaScriptFunction,javaScriptConditional,javaScriptGlobal,javaScriptRepeat,javaScriptBranch,javaScriptStatement,javaScriptGlobalObjects,javaScriptMessage,javaScriptIdentifier,javaScriptExceptions,javaScriptReserved,javaScriptDeprecated,javaScriptDomErrNo,javaScriptDomNodeConsts,javaScriptHtmlEvents,javaScriptDotNotation,javaScriptBrowserObjects,javaScriptDOMObjects,javaScriptAjaxObjects,javaScriptPropietaryObjects,javaScriptDOMMethods,javaScriptHtmlElemProperties,javaScriptDOMProperties,javaScriptEventListenerKeywords,javaScriptEventListenerMethods,javaScriptAjaxProperties,javaScriptAjaxMethods
 
 if main_syntax == "javascript"
   syntax sync clear
@@ -179,16 +175,14 @@ if main_syntax == "javascript"
   " syntax sync match javaScriptHighlight grouphere javaScriptBlock /{/
 endif
 
-syntax keyword   javaScriptFuncKeyword function contained
-syntax region  javaScriptFuncDef start="function" end="\([^)]*\)" contains=javaScriptFuncKeyword,javaScriptFuncArg keepend
-syntax match  javaScriptFuncArg "\(([^()]*)\)" contains=javaScriptParens,javaScriptFuncComma contained
-syntax match  javaScriptFuncComma /,/ contained
+syntax match   javaScriptFunction       /\<function\>/ nextgroup=javaScriptFuncName skipwhite
+syntax region  javaScriptFuncName       contained matchgroup=javaScriptFuncName start=/\%(\$\|\w\)*\s*(/ end=/)/ contains=javaScriptLineComment,javaScriptComment nextgroup=javaScriptFuncBlock skipwhite skipempty
 " syntax region  javaScriptFuncBlock      contained matchgroup=javaScriptFuncBlock start="{" end="}" contains=@javaScriptAll,javaScriptParensErrA,javaScriptParensErrB,javaScriptParen,javaScriptBracket,javaScriptBlock fold
 
 syn match	javaScriptBraces	   "[{}\[\]]"
 syn match	javaScriptParens	   "[()]"
 syn match	javaScriptOpSymbols	   "=\{1,3}\|!==\|!=\|<\|>\|>=\|<=\|++\|+=\|--\|-="
-syn match   javaScriptEndColons    "[;,]"
+syn match   javaScriptEndColons    "[;,]$"
 syn match   javaScriptLogicSymbols "\(&&\)\|\(||\)"
 
 " JavaScriptFold Function {{{
@@ -240,7 +234,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink javaScriptIdentifier           Identifier
   HiLink javaScriptRepeat               Repeat
   HiLink javaScriptStatement            Statement
-  HiLink javaScriptFuncKeyword             Function
+  HiLink javaScriptFunction             Function
   HiLink javaScriptMessage              Keyword
   HiLink javaScriptDeprecated           Exception
   HiLink javaScriptError                Error
@@ -282,12 +276,10 @@ if version >= 508 || !exists("did_javascript_syn_inits")
 	HiLink javaScriptAjaxMethods        Exception
 	HiLink javaScriptAjaxProperties     Type
 
-	HiLink javaScriptFuncDef            Title
-    HiLink javaScriptFuncArg            Special
-    HiLink javaScriptFuncComma          Operator  
+	HiLink javaScriptFuncName           Title
 
 	HiLink javaScriptHtmlEvents         Special
-	HiLink javaScriptHtmlElemProperties Type
+	HiLink javaScriptHtmlElemProperties   Type
 
 	HiLink javaScriptEventListenerKeywords Keyword
 

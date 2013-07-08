@@ -21,57 +21,41 @@ color desert
 set fenc=utf8
 set fencs=utf8,gbk,gb18030,gb2312,ascii,big5,utf16,utf32
 
+execute pathogen#infect()
 filetype on " enable file type detection
 filetype plugin indent on " enable loading the plugin for appropriate file type 
 
 
 
-
-
 if has("autocmd")
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
     autocmd FileType c,cpp,cxx,h,hpp set foldmethod=syntax
 
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
     autocmd FileType html setl ts=2 sw=2 sts=2 et
-
-    let g:pydiction_location='/home/wgwang/.vim/ftplugin/pydiction/complete-dict'
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd bufnewfile *.py :0r ~/.vim/templates/python.py
-
-    let g:xml_syntax_folding=1
+    
+    autocmd FileType xml let g:xml_syntax_folding=1
     autocmd FileType xml setlocal foldmethod=syntax ts=2 sw=2 sts=2 et
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
-    
+
+    autocmd FileType python let g:pydiction_location='$HOME/.vim/ftplugin/pydiction/complete-dict'
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd bufnewfile *.py :0r ~/.vim/templates/python.py
+   
+    autocmd FileType javascript set dictionary+=$HOME/.vim/ftplugin/node/node.dict
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
     autocmd FileType javascript call JavaScriptFold()
-    let g:javaScript_fold=1
-    autocmd FileType javascript setlocal foldmethod=syntax
+    autocmd FileType javascript let g:javaScript_fold=1
+    autocmd FileType javascript setlocal foldmethod=syntax autoindent
 
+    autocmd FileType json set formatoptions=tcq2l 
+    autocmd FileType json setlocal ts=2 sw=2 sts=2 et foldmethod=syntax autoindent
 endif
 
-"let g:neocomplcache_enable_at_startup = 1 
-"" Disable AutoComplPop.
-"let g:acp_enableAtStartup = 0
-"" " Use neocomplcache.
-"let g:neocomplcache_enable_at_startup = 1
-"" " Use smartcase.
-"let g:neocomplcache_enable_smart_case = 1
-"" " Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
-"" " Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
-"" " Set minimum syntax keyword length.
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-""
-"let g:neocomplcache_enable_auto_select = 1 
-
-
 let vimrplugin_screenplugin = 0
-
 
 
 map <C-n> :bnext<CR>
