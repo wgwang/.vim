@@ -47,12 +47,14 @@ if has("autocmd")
    
     autocmd FileType javascript set dictionary+=$HOME/.vim/ftplugin/node/node.dict
     autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType javascript call JavaScriptFold()
     autocmd FileType javascript let g:javaScript_fold=1
-    autocmd FileType javascript setlocal foldmethod=syntax autoindent
+    "autocmd FileType javascript call JavaScriptFold()
+    autocmd FileType javascript setlocal foldmethod=syntax autoindent smartindent
 
     autocmd FileType json set formatoptions=tcq2l 
     autocmd FileType json setlocal ts=2 sw=2 sts=2 et foldmethod=syntax autoindent
+
+    autocmd filetype jade set ts=2 sw=2 sts=2 et
 endif
 
 let vimrplugin_screenplugin = 0
