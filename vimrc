@@ -56,6 +56,8 @@ if has("autocmd")
     autocmd FileType json setlocal ts=2 sw=2 sts=2 et foldmethod=syntax autoindent
 
     autocmd filetype jade set ts=2 sw=2 sts=2 et
+
+    autocmd BufRead,BufNewFile *.thrift set filetype=thrift 
 endif
 
 let vimrplugin_screenplugin = 0
