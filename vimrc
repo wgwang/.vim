@@ -4,7 +4,8 @@ set history=5000 " lines of Ex-mode commands, search history
 
 set showmatch " show matching paren
 set incsearch " BUT do highlight where the so far typed pattern matches
-set hlsearch
+set hlsearch 
+set ignorecase
 
 set ai " autoindent
 set si " smartindent

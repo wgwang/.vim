@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/wgwang/develop/hxerp/openerp/addons/point_of_sale/static/src/xml'
-let g:netrw_dirhist_2='/home/wgwang/develop/hxerp/openerp/addons/point_of_sale/static/src'
-let g:netrw_dirhist_3='/home/wgwang/develop/hxerp/openerp/addons/point_of_sale/static/src/css'
-let g:netrw_dirhist_4='/home/wgwang/develop/hx/hxERP/openerp/addons/d.txt'
-let g:netrw_dirhist_5='/home/wgwang/develop/igithub/wgwang.github.io.git/_includes'
-let g:netrw_dirhist_6='/home/wgwang/develop/igithub/wgwang.github.io.git/_includes/themes'
-let g:netrw_dirhist_7='/home/wgwang/develop/igithub/wgwang.github.io.git/_layouts'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/wgwang/tmp/12306'
