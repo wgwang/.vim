@@ -1,1 +1,7 @@
-# by kdd.wang@gmail.com
+#!/usr/bin/env python
+"""
+    Create:##create##
+    By wgwang(kdd.wang@gmail.com)
+"""
+
+

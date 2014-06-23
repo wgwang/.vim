@@ -206,7 +206,7 @@ set expandtab " real tabs please!
 set smarttab " use tabs at the start of a line, spaces elsewhere
 
 set number
-"set nowrap " do not wrap lines
+set wrap "wrap lines, nowarp if not
 set showcmd
 set showmode 
 set cursorline  
@@ -233,6 +233,11 @@ let b:delimitMate_expand_cr = 2
 let b:delimitMate_expand_space=1
 let b:delimitMateBackspace=1
 
+" For python-mode
+let g:pymode_lint = 0
+let g:pymode_rope_completion = 0
+"let g:pymode_options_max_line_length =100 
+
 " Syntastic settings
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -247,6 +252,12 @@ let g:syntastic_loc_list_height = 3
 let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 " nmap <silent> <leader>y :SyntasticCheck<cr>"
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_flake8_args = "--ignore=E501"
+"let g:syntastic_python_flake8_args = "--max-line-length=100"
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = "--disable=C0301"
+"let g:syntastic_python_pylint_args = "--max-line-length=100"
 
 " colorv setting
 let g:colorv_no_global_map=1
@@ -267,14 +278,27 @@ if has('statusline')
     set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 endif
 
+
+" For auto inserting date when newing python file
+fun PythonNewfileTemplate()
+    if line("$") > 8
+        let l = 8
+    else
+        let l = line("$")
+    endif
+"   exe "1," . l . "g/Filename:##filename##/s/Filename:##filename##/Filename: " . expand("%:t:r")
+    exe "1," . l . "g/Create:##create##/s/Create:##create##/Create: " . strftime("%Y-%m-%d")
+endfun
+
 if has("autocmd")
 " for python
 "    autocmd FileType python let g:pydiction_location='/home/wgwang/.vim/bundle/pydiction/complete-dict'
 "    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     au bufnewfile *.py :0r ~/.vim/templates/python.py 
-"    au FileType python setlocal foldlevel=1000
-    au Filetype python let g:pymode_lint = 0
-    au Filetype python let g:pymode_rope_completion = 0
+    au bufnewfile *.py call PythonNewfileTemplate()
+    au FileType python setlocal foldlevel=1000
+    au FileType python setlocal wrap
+
 
 " for c
     au FileType c,h let g:ycm_global_ycm_extra_conf ='~/.vim/ycm_extra_conf/c.py'
