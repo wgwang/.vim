@@ -44,7 +44,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'wgwang/vcscommand'
 " For git
 Plugin 'tpope/vim-fugitive'
-
+"Plugin 'mhinz/vim-signify'
 
 " For source exploring via ctags, like source insight.
 " It is useful when reading source files of large projects.
@@ -124,19 +124,25 @@ Plugin 'Rykka/riv.vim'
 "Plugin 'StanAngeloff/php.vim'
 "Plugin 'rayburgemeestre/phpfolding.vim'
 
-"Javascript
-"Plugin 'pangloss/vim-javascript' "indentation and Syntax
-"Plugin 'jelera/vim-javascript-syntax'
+" Javascript
+" Ref: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript' "indentation and Syntax
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
 "Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'moll/vim-node'
-"Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'helino/vim-json'
 "Plugin 'elzr/vim-json'
 "
-"xml, HTML&HTML5, CSS&CSS3 
+" For xml, HTML&HTML5
 "Plugin 'sukima/xmledit'
 "Plugin 'othree/xml.vim'
 "Plugin 'othree/html5.vim'
 
+" For CSS&CSS3 and SDLs which generate css
 "Plugin 'lepture/vim-css'
 "Plugin 'wavded/vim-stylus'
 "Plugin 'vitalk/vim-lesscss'
@@ -252,12 +258,17 @@ let g:syntastic_loc_list_height = 3
 let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 " nmap <silent> <leader>y :SyntasticCheck<cr>"
+" For python
 "let g:syntastic_python_checkers = ['flake8']
 "let g:syntastic_python_flake8_args = "--ignore=E501"
 "let g:syntastic_python_flake8_args = "--max-line-length=100"
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--disable=C0301"
+let g:syntastic_python_pylint_args = "--disable=C0301,C0111"
 "let g:syntastic_python_pylint_args = "--max-line-length=100"
+" For Javascript
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_jshint_conf = "~/.vim/jshint.json"
+
 
 " colorv setting
 let g:colorv_no_global_map=1
@@ -299,7 +310,6 @@ if has("autocmd")
     au FileType python setlocal foldlevel=1000
     au FileType python setlocal wrap
 
-
 " for c
     au FileType c,h let g:ycm_global_ycm_extra_conf ='~/.vim/ycm_extra_conf/c.py'
     au FileType c,h let g:syntastic_c_check_header = 1
@@ -316,6 +326,13 @@ if has("autocmd")
 " for go programming language 
     au FileType go setlocal foldmethod=syntax
     au FileType go color desertEx
+
+" For Javascript
+    au FileType javascript let g:ycm_add_preview_to_completeopt=0
+    au FileType javascript let g:ycm_confirm_extra_conf=0
+    au FileType javascript setlocal completeopt-=preview
+    au FileType javascript let b:javascript_fold=1
+    au FileType javascript call JavaScriptFold()
 
 " for markdown
 "    au FileType markdown let g:instant_markdown_slow = 1
