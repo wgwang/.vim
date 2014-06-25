@@ -97,7 +97,7 @@ Plugin 'klen/python-mode'
 "django template, set filetype=htmldjango
 Plugin 'django.vim'
 "Jinja2 tempalte
-Plugin 'Glench/Vim-Jinja2-Syntax'
+"Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " C & C++
 Plugin 'a.vim'
@@ -118,7 +118,6 @@ Plugin 'Blackrush/vim-gocode'
 " reStructureText, syntax, folding and indent
 Plugin 'Rykka/riv.vim'
 
-
 "php
 "Plugin '2072/PHP-Indenting-for-VIm'
 "Plugin 'StanAngeloff/php.vim'
@@ -130,23 +129,27 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript' "indentation and Syntax
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
-
+"Plugin 'othree/javascript-libraries-syntax.vim'
+" formatting javascript files
 "Plugin 'maksimr/vim-jsbeautify'
+" node project
 "Plugin 'moll/vim-node'
-"Plugin 'helino/vim-json'
-"Plugin 'elzr/vim-json'
-"
+
+" For json, hilight and indent etc.
+Plugin 'elzr/vim-json'
+
 " For xml, HTML&HTML5
-"Plugin 'sukima/xmledit'
-"Plugin 'othree/xml.vim'
-"Plugin 'othree/html5.vim'
+Plugin 'sukima/xmledit'
+Plugin 'othree/xml.vim'
+Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/MatchTagAlways'
 
 " For CSS&CSS3 and SDLs which generate css
-"Plugin 'lepture/vim-css'
-"Plugin 'wavded/vim-stylus'
-"Plugin 'vitalk/vim-lesscss'
-"Plugin 'tpope/vim-haml'
+Plugin 'lepture/vim-css'
+Plugin 'wavded/vim-stylus'
+Plugin 'vitalk/vim-lesscss'
+Plugin 'tpope/vim-haml'
 
 "java, ref http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
 "Plugin 'adragomir/javacomplete'
@@ -155,29 +158,26 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 "Plugin 'vim-ruby/vim-ruby'
 
 "Haskell 
-"Plugin 'dag/vim2hs'
+Plugin 'dag/vim2hs'
 
 "R language
-"Plugin 'jcfaria/Vim-R-plugin'
+Plugin 'jcfaria/Vim-R-plugin'
 
 "Erlang, ref http://blog.erlware.org/2013/09/09/how-to-use-vim-for-erlang-development/
-"Plugin 'jimenezrick/vimerl'
+Plugin 'jimenezrick/vimerl'
 
 "Markdown 
-"Plugin 'plasticboy/vim-markdown'
-"Plugin 'suan/vim-instant-markdown'
-
-
+Plugin 'plasticboy/vim-markdown'
 
 "sql
-"Plugin 'exu/pgsql.vim'
+Plugin 'exu/pgsql.vim'
 "Plugin 'ivalkeen/vim-simpledb'
 "Plugin 'SQLComplete.vim'
 
 "misc
-"Plugin 'Puppet-Syntax-Highlighting'
-"Plugin 'evanmiller/nginx-vim-syntax'
-"Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'Puppet-Syntax-Highlighting'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'ekalinin/Dockerfile.vim'
 
 
 
@@ -268,13 +268,18 @@ let g:syntastic_python_pylint_args = "--disable=C0301,C0111"
 " For Javascript
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_javascript_jshint_conf = "~/.vim/jshint.json"
-
+" For html
+let g:syntastic_html_checkers=['jshint']
+let g:syntastic_javascript_jshint_conf = "~/.vim/jshint.json"
 
 " colorv setting
 let g:colorv_no_global_map=1
 
 " netrw settings
 let g:netrw_liststyle=3
+
+" Json setting
+let g:vim_json_syntax_conceal = 0
 
 if has('statusline')
     set laststatus=2
@@ -337,6 +342,11 @@ if has("autocmd")
 " for markdown
 "    au FileType markdown let g:instant_markdown_slow = 1
 "    au FileType markdown let g:instant_markdown_autostart = 0
+
+" For html
+
+" For xml
+    au FileType xml let b:loaded_delimitMate = 1
 
 endif
 
