@@ -117,7 +117,8 @@ Plugin 'Blackrush/vim-gocode'
 
 " reStructureText, syntax, folding and indent
 Plugin 'Rykka/riv.vim'
-
+Plugin 'vim-voom/VOoM'
+" Plugin 'vim-scripts/rest.vim'
 "php
 "Plugin '2072/PHP-Indenting-for-VIm'
 "Plugin 'StanAngeloff/php.vim'
@@ -142,8 +143,8 @@ Plugin 'elzr/vim-json'
 Plugin 'sukima/xmledit'
 Plugin 'othree/xml.vim'
 Plugin 'othree/html5.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'vim-scripts/XML-Folding'
 
 " For CSS&CSS3 and SDLs which generate css
 Plugin 'lepture/vim-css'
@@ -263,7 +264,7 @@ let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 "let g:syntastic_python_flake8_args = "--ignore=E501"
 "let g:syntastic_python_flake8_args = "--max-line-length=100"
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--disable=C0301,C0111"
+let g:syntastic_python_pylint_args = "--disable=C0301,C0111,R0913,R0904,C0330"
 "let g:syntastic_python_pylint_args = "--max-line-length=100"
 " For Javascript
 let g:syntastic_javascript_checkers = ['jshint']
@@ -286,7 +287,7 @@ if has('statusline')
     set statusline=%<%f\  " Filename
     set statusline+=%w%h%m%r " Options
     set statusline+=\ %{fugitive#statusline()} " Git Hotness
-    "set statusline+=\ [%{&ff}/%Y] " filetype
+    set statusline+=\ [%{&ff}/%Y] " filetype
     set statusline+=\ [%{getcwd()}] " current dir
     "set statusline+=%#warningmsg#
     set statusline+=\ %{SyntasticStatuslineFlag()}
@@ -306,13 +307,23 @@ fun PythonNewfileTemplate()
     exe "1," . l . "g/Create:##create##/s/Create:##create##/Create: " . strftime("%Y-%m-%d")
 endfun
 
+" For auto templating rst file
+fun RSTNewfileTemplate()
+    if line("$") > 20
+        let l = 20
+    else
+        let l = line("$")
+    endif
+    exe "1," . l . "g/:create:##createddate##/s/:create:##createddate##/:create: " . strftime("%Y-%m-%d")
+endfun
+
+
 if has("autocmd")
 " for python
 "    autocmd FileType python let g:pydiction_location='/home/wgwang/.vim/bundle/pydiction/complete-dict'
 "    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     au bufnewfile *.py :0r ~/.vim/templates/python.py 
     au bufnewfile *.py call PythonNewfileTemplate()
-    au FileType python setlocal foldlevel=1000
     au FileType python setlocal wrap
 
 " for c
@@ -345,8 +356,16 @@ if has("autocmd")
 
 " For html
 
+
 " For xml
     au FileType xml let b:loaded_delimitMate = 1
+    au FileType xml let loaded_xmledit = 1
+
+
+" For reStructuredText(rst)
+    au bufnewfile *.rst :0r ~/.vim/templates/rst.rst
+    au bufnewfile *.rst call RSTNewfileTemplate()
+    au FileType rst setlocal  tabstop=3 softtabstop=3 shiftwidth=3 
 
 endif
 
