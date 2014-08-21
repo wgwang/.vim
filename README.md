@@ -37,6 +37,18 @@ Sharing is significant spirit of hacker world.
 
 Or launch `vim` and run `:PluginInstall`
 
+
+* compile YouCompleteMe
+
+```bash
+    cd bundle/YouCompleteMe
+    ./install.sh --clang-completer
+```
+
+Building YCM requires cmake 2.8 or higher.
+If need C# support, adding parameter --omnisharp-completer
+
+
 ## Mac
 
 ## Windows

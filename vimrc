@@ -272,6 +272,21 @@ let g:syntastic_javascript_jshint_conf = "~/.vim/jshint.json"
 " For html
 let g:syntastic_html_checkers=['jshint']
 let g:syntastic_javascript_jshint_conf = "~/.vim/jshint.json"
+" For CPP
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = "g++"
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+" For C
+let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_c_check_header = 1
+let g:syntastic_c_compiler = 'gcc'
+let g:syntastic_c_compiler_options = ' -std=c99'
+
+
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
+let g:ycm_server_keep_logfiles = 1
 
 " colorv setting
 let g:colorv_no_global_map=1
@@ -328,15 +343,10 @@ if has("autocmd")
 
 " for c
     au FileType c,h let g:ycm_global_ycm_extra_conf ='~/.vim/ycm_extra_conf/c.py'
-    au FileType c,h let g:syntastic_c_check_header = 1
-    au FileType c,h let g:syntastic_c_compiler = 'gcc'
-    au FileType c,h let g:syntastic_c_compiler_options = ' -std=c99'
     au FileType c,h setlocal foldmethod=syntax
 
 " for c++
     au FileType cpp,hpp let g:ycm_global_ycm_extra_conf ='~/.vim/ycm_extra_conf/cpp.py'
-    au FileType cpp,hpp let g:syntastic_cpp_compiler_options = ' -std=c++11'
-    au FileType cpp,hpp let g:syntastic_cpp_check_header = 1
     au FileType cpp,hpp setlocal foldmethod=syntax
 
 " for go programming language 
