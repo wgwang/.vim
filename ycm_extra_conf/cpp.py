@@ -48,8 +48,6 @@ flags = [
 '-x',
 'c++',
 '-I',
-'.',
-'-I',
 '/usr/include/x86_64-linux-gnu/c++/4.8',
 '-isystem',
 '/usr/include',

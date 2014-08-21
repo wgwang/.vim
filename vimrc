@@ -283,10 +283,10 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_compiler = 'gcc'
 let g:syntastic_c_compiler_options = ' -std=c99'
 
-
-let g:ycm_server_use_vim_stdout = 1
-let g:ycm_server_log_level = 'debug'
-let g:ycm_server_keep_logfiles = 1
+" YouCompleteMe settings
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_server_keep_logfiles = 0
 
 " colorv setting
 let g:colorv_no_global_map=1
