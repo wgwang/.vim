@@ -9,6 +9,9 @@ Sharing is significant spirit of hacker world.
 
 # Install instruction
 
+Some plugin require that the version of vim is 7.4. So if there is any error, please upgrade vim to 7.4. 
+
+
 ## Linux / Unix
 
 * fork this repository to the home directory
@@ -50,6 +53,13 @@ If need C# support, adding parameter --omnisharp-completer
 
 
 ## Mac
+
+* upgrade vim using brew
+
+Make sure your vim has python2 support, because YouCompleteMe requires it.
+
+* Other steps are the same as Linux
+
 
 ## Windows
 
