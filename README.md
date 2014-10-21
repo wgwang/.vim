@@ -80,3 +80,17 @@ nmap <Leader>is :IHS<CR>:A<CR>
 
 
 
+
+# golang (the go programming language)
+
+Make sure you have properly installed gocode before using vim for golang. 
+
+```bash
+    go get github.com/nsf/gocode
+    gocode --version
+```
+
+If there is any error when running command above, please check the  envirement for golang. 
+Properly setting GOROOT, GOPATH and PATH=$GOROOT/bin:$GOPATH/bin:$PATH is needed.
+
+

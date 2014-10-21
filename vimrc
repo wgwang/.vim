@@ -147,7 +147,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'vim-scripts/XML-Folding'
 
 " For CSS&CSS3 and SDLs which generate css
-Plugin 'lepture/vim-css'
+Plugin 'hail2u/vim-css3-syntax' "an option
 Plugin 'wavded/vim-stylus'
 Plugin 'vitalk/vim-lesscss'
 Plugin 'tpope/vim-haml'
