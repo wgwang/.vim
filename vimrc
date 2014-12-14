@@ -116,6 +116,7 @@ Plugin 'Blackrush/vim-gocode'
 "Plugin 'jnwhiteh/vim-golang'
 
 " reStructureText, syntax, folding and indent
+Plugin 'Rykka/clickable.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'vim-voom/VOoM'
 " Plugin 'vim-scripts/rest.vim'
