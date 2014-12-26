@@ -265,7 +265,7 @@ let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 "let g:syntastic_python_flake8_args = "--ignore=E501"
 "let g:syntastic_python_flake8_args = "--max-line-length=100"
 let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_pylint_args = "--disable=C0301,C0111,R0913,R0904,C0330,C0103"
+let g:syntastic_python_pylint_args = "--disable=C0301,C0111,R0913,R0904,C0330,C0103,W0232,R0903"
 "let g:syntastic_python_pylint_args = "--max-line-length=100"
 " For Javascript
 let g:syntastic_javascript_checkers = ['jshint']

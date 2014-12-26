@@ -7,6 +7,14 @@ I have created this project to share my configuration of vim. Feel free to fork 
 
 Sharing is significant spirit of hacker world.
 
+
+#dependencies
+
+## pylint and pylint-django
+for checking python and django. syntastic will use them
+
+
+
 # Install instruction
 
 Some plugin require that the version of vim is 7.4. So if there is any error, please upgrade vim to 7.4. 
