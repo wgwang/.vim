@@ -13,7 +13,10 @@ Sharing is significant spirit of hacker world.
 ## pylint and pylint-django
 for checking python and django. syntastic will use them
 
+## YouCompleteMe 
+YouCompleteMe depends on clang, boost etc.
 
+edit `.vim/ycm_extra_conf/cpp.py` for the include path of g++/clang++ etc
 
 # Install instruction
 
