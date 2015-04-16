@@ -48,17 +48,17 @@ flags = [
 '-x',
 'c++',
 '-I',
-'/usr/include/x86_64-linux-gnu/c++/4.8',
+'/usr/include/x86_64-linux-gnu/c++/4.9',
 '-isystem',
 '/usr/include',
 '-isystem',
 '/usr/local/include',
 '-isystem',
-'/usr/include/c++/4.8/',
+'/usr/include/c++/4.9/',
 '-isystem',
-'/usr/include/c++/4.8/backward',
+'/usr/include/c++/4.9/backward',
 '-isystem',
-'/usr/include/clang/3.4/include/',
+'/usr/include/clang/3.5/include/',
 ]
 
 

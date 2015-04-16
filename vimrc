@@ -41,10 +41,10 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'kien/ctrlp.vim' 
 
 " For version control system, support svn, cvs, git, hg etc.
-Plugin 'wgwang/vcscommand'
+" Plugin 'wgwang/vcscommand'
 " For git
 Plugin 'tpope/vim-fugitive'
-"Plugin 'mhinz/vim-signify'
+" Plugin 'mhinz/vim-signify'
 
 " For source exploring via ctags, like source insight.
 " It is useful when reading source files of large projects.
@@ -88,14 +88,15 @@ Plugin 'WolfgangMehner/vim-plugins'
 
 " Color tool for view/pick/edit/design/scheme
 " Especially for css design
-Plugin 'Rykka/colorv.vim'
+" Plugin 'Rykka/colorv.vim'
 
 " Python programming tools.
 " Because of syntastic and YCM,  disable its syntax check and autocomplete
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
+Plugin 'tmhedberg/SimpylFold'
 
 "django template, set filetype=htmldjango
-Plugin 'django.vim'
+" Plugin 'django.vim'
 "Jinja2 tempalte
 "Plugin 'Glench/Vim-Jinja2-Syntax'
 
@@ -116,9 +117,9 @@ Plugin 'Blackrush/vim-gocode'
 "Plugin 'jnwhiteh/vim-golang'
 
 " reStructureText, syntax, folding and indent
-Plugin 'Rykka/clickable.vim'
-Plugin 'Rykka/riv.vim'
-Plugin 'vim-voom/VOoM'
+" Plugin 'Rykka/clickable.vim'
+" Plugin 'Rykka/riv.vim'
+" Plugin 'vim-voom/VOoM'
 " Plugin 'vim-scripts/rest.vim'
 "php
 "Plugin '2072/PHP-Indenting-for-VIm'
@@ -127,10 +128,10 @@ Plugin 'vim-voom/VOoM'
 
 " Javascript
 " Ref: http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript' "indentation and Syntax
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'pangloss/vim-javascript' "indentation and Syntax
+" Plugin 'nathanaelkane/vim-indent-guides'
+" Plugin 'marijnh/tern_for_vim'
 "Plugin 'othree/javascript-libraries-syntax.vim'
 " formatting javascript files
 "Plugin 'maksimr/vim-jsbeautify'
@@ -141,17 +142,17 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'elzr/vim-json'
 
 " For xml, HTML&HTML5
-Plugin 'sukima/xmledit'
-Plugin 'othree/xml.vim'
-Plugin 'othree/html5.vim'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'vim-scripts/XML-Folding'
+" Plugin 'sukima/xmledit'
+" Plugin 'othree/xml.vim'
+" Plugin 'othree/html5.vim'
+" Plugin 'Valloric/MatchTagAlways'
+" Plugin 'vim-scripts/XML-Folding'
 
 " For CSS&CSS3 and SDLs which generate css
-Plugin 'hail2u/vim-css3-syntax' "an option
-Plugin 'wavded/vim-stylus'
-Plugin 'vitalk/vim-lesscss'
-Plugin 'tpope/vim-haml'
+" Plugin 'hail2u/vim-css3-syntax' "an option
+" Plugin 'wavded/vim-stylus'
+" Plugin 'vitalk/vim-lesscss'
+" Plugin 'tpope/vim-haml'
 
 "java, ref http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
 "Plugin 'adragomir/javacomplete'
@@ -169,7 +170,7 @@ Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'jimenezrick/vimerl'
 
 "Markdown 
-Plugin 'plasticboy/vim-markdown'
+" Plugin 'plasticboy/vim-markdown'
 
 "sql
 Plugin 'exu/pgsql.vim'
@@ -242,8 +243,9 @@ let b:delimitMate_expand_space=1
 let b:delimitMateBackspace=1
 
 " For python-mode
-let g:pymode_lint = 0
-let g:pymode_rope_completion = 0
+"let g:pymode_lint = 0
+"let g:pymode_rope_completion = 0
+"let g:pymode_rope = 0 
 "let g:pymode_options_max_line_length =100 
 
 " Syntastic settings
