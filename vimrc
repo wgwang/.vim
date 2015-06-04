@@ -263,11 +263,10 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 " nmap <silent> <leader>y :SyntasticCheck<cr>"
 " For python
-"let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_flake8_args = "--ignore=E501"
-"let g:syntastic_python_flake8_args = "--max-line-length=100"
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = "--ignore=E501,W391"
+"let g:syntastic_python_flake8_args = "--max-line-length=100"
 "let g:syntastic_python_pylint_args = "--disable=C0301,C0111,R0913,R0904,C0330,C0103,W0232,R0903"
 "let g:syntastic_python_pylint_args = "--max-line-length=100"
 " For Javascript
