@@ -11,7 +11,7 @@ Sharing is significant spirit of hacker world.
 #dependencies
 
 ## pylint and pylint-django
-for checking python and django. syntastic will use them
+for checking python3 and django. syntastic will use them
 
 ## YouCompleteMe 
 YouCompleteMe depends on clang, boost etc.
@@ -56,7 +56,7 @@ Or launch `vim` and run `:PluginInstall`
 
 ```bash
     cd bundle/YouCompleteMe
-    ./install.sh --clang-completer
+    python3 install.py --clang-completer
 ```
 
 Building YCM requires cmake 2.8 or higher.
@@ -67,7 +67,7 @@ If need C# support, adding parameter --omnisharp-completer
 
 * upgrade vim using brew
 
-Make sure your vim has python2 support, because YouCompleteMe requires it.
+Make sure your vim has python3 support, because YouCompleteMe requires it.
 
 * Other steps are the same as Linux
 
@@ -105,3 +105,4 @@ If there is any error when running command above, please check the  envirement f
 Properly setting GOROOT, GOPATH and PATH=$GOROOT/bin:$GOPATH/bin:$PATH is needed.
 
 
+cd $HOME/prometheus
