@@ -265,7 +265,7 @@ let g:syntastic_stl_format = '[%E{%feE%e}%B{ }%W{%fwW%w}]'
 " For python
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = "--ignore=E501,W391,F401,E302,E226,E228,E125,E225,E128,W293,E126,F812,E222,E203"
+let g:syntastic_python_flake8_args = "--ignore=E501,W391,F401,E302,E226,E228,E125,E225,E128,W293,E126,F812,E222,E203,E402,E731"
 "let g:syntastic_python_flake8_args = "--max-line-length=100"
 "let g:syntastic_python_pylint_args = "--disable=C0301,C0111,R0913,R0904,C0330,C0103,W0232,R0903"
 "let g:syntastic_python_pylint_args = "--max-line-length=100"
