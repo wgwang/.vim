@@ -215,6 +215,7 @@ set expandtab " real tabs please!
 set smarttab " use tabs at the start of a line, spaces elsewhere
 
 set number
+set relativenumber
 set wrap "wrap lines, nowarp if not
 set showcmd
 set showmode 
