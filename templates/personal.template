@@ -1,0 +1,5 @@
+SetStyle( 'default' )
+SetMacro( 'AUTHOR',       'wgwang' )
+SetMacro( 'EMAIL',       'kdd.wang@gmail.com' )
+SetMacro( 'COPYRIGHT',    'Copyright (c) |YEAR|, |AUTHOR|' )
+SetMacro( 'LICENSE',      'wgwang License' )

@@ -170,18 +170,23 @@ Plugin 'jcfaria/Vim-R-plugin'
 Plugin 'jimenezrick/vimerl'
 
 "Markdown 
-" Plugin 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 
 "sql
 Plugin 'exu/pgsql.vim'
 "Plugin 'ivalkeen/vim-simpledb'
 "Plugin 'SQLComplete.vim'
 
+"CQL, cassandra
+Plugin 'elubow/cql-vim'
+
 "misc
 Plugin 'Puppet-Syntax-Highlighting'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'ekalinin/Dockerfile.vim'
 
+"latex
+Bundle 'gerw/vim-latex-suite'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -374,6 +379,9 @@ if has("autocmd")
 " For xml
     au FileType xml let b:loaded_delimitMate = 1
     au FileType xml let loaded_xmledit = 1
+    au FileType xml set tabstop=2 " tab spacing (settings below are just to unify it)
+    au FileType xml set softtabstop=2 " unify
+    au FileType xml set shiftwidth=2 " unify
 
 
 " For reStructuredText(rst)
@@ -387,4 +395,5 @@ endif
 map <C-n> :bnext<CR>
 imap <f2> <ESC><CR>
 imap zz <ESC>
+autocmd BufWritePre * %s/\s\+$//e
 
