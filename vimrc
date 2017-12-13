@@ -11,7 +11,7 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/vundle'
 
-" These are some awesome colorschemes. 
+" These are some awesome colorschemes.
 " I like desert, but molokai is awesome two.
 Plugin 'fugalh/desert.vim'
 Plugin 'mbbill/desertEx'
@@ -22,7 +22,7 @@ Plugin 'tomasr/molokai'
 " Plugin 'tpope/vim-vinegar'
 " Plugin 'scrooloose/nerdtree'
 
-" There are several autocomplete plugins listing the follow. 
+" There are several autocomplete plugins listing the follow.
 " All these plugins aren't prefect. Choosing the one you prefer.
 " YCM is my choice, and the following config is based it.
 Plugin 'Valloric/YouCompleteMe'
@@ -38,7 +38,7 @@ Plugin 'fholgado/minibufexpl.vim'
 
 " Files finder, supporting fuzzy, reg, etc.
 " Vim built in netrw is for files explore
-Plugin 'kien/ctrlp.vim' 
+Plugin 'kien/ctrlp.vim'
 
 " For version control system, support svn, cvs, git, hg etc.
 " Plugin 'wgwang/vcscommand'
@@ -50,13 +50,13 @@ Plugin 'tpope/vim-fugitive'
 " It is useful when reading source files of large projects.
 Plugin 'wesleyche/SrcExpl'
 
-" Auto detecting CJK and Unicode file encodings. 
+" Auto detecting CJK and Unicode file encodings.
 " You should not use it if all your docs are ascii only.
 Plugin 'mbbill/fencview'
 
 " Browsing the tags of source code files via a sidebar.
-" It displays the ctags-generated tags of the current file, ordered by their scope. 
-" Such as methods in C++ are displayed under the class they are defined in. 
+" It displays the ctags-generated tags of the current file, ordered by their scope.
+" Such as methods in C++ are displayed under the class they are defined in.
 Plugin 'majutsushi/tagbar'
 
 " Some settings simple and useful.
@@ -73,7 +73,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/syntastic'
 
 " Snippets for several programming language
-" The default settings is incompatible with YouCompleteMe, 
+" The default settings is incompatible with YouCompleteMe,
 " because both of they use <tab> key as trigger.
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -94,6 +94,7 @@ Plugin 'WolfgangMehner/vim-plugins'
 " Because of syntastic and YCM,  disable its syntax check and autocomplete
 " Plugin 'klen/python-mode'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'lambdalisue/vim-cython-syntax'
 
 "django template, set filetype=htmldjango
 " Plugin 'django.vim'
@@ -109,7 +110,7 @@ Plugin 'Mizuchi/STL-Syntax'
 " Autocomplete plugin alternative to YCM
 "Plugin 'Rip-Rip/clang_complete'
 
-" Go language 
+" Go language
 " Using https://github.com/nsf/gocode as daemon
 " You should check first if gocode is insalled properly.
 Plugin 'Blackrush/vim-gocode'
@@ -157,10 +158,10 @@ Plugin 'elzr/vim-json'
 "java, ref http://www.lucianofiandesio.com/vim-configuration-for-happy-java-coding
 "Plugin 'adragomir/javacomplete'
 
-"Ruby 
+"Ruby
 "Plugin 'vim-ruby/vim-ruby'
 
-"Haskell 
+"Haskell
 Plugin 'dag/vim2hs'
 
 "R language
@@ -169,8 +170,8 @@ Plugin 'jcfaria/Vim-R-plugin'
 "Erlang, ref http://blog.erlware.org/2013/09/09/how-to-use-vim-for-erlang-development/
 Plugin 'jimenezrick/vimerl'
 
-"Markdown 
-Plugin 'plasticboy/vim-markdown'
+"Markdown
+" Plugin 'plasticboy/vim-markdown'
 
 "sql
 Plugin 'exu/pgsql.vim'
@@ -195,8 +196,8 @@ Bundle 'gerw/vim-latex-suite'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " customize vim
 filetype on " enable file type detection
-filetype plugin indent on " enable loading the plugin for appropriate file type 
-syntax on 
+filetype plugin indent on " enable loading the plugin for appropriate file type
+syntax on
 "set title
 
 set history=2048 " lines of Ex-mode commands, search history
@@ -206,7 +207,7 @@ set undoreload=1000
 " for search
 set showmatch " show matching paren
 set incsearch " BUT do highlight where the so far typed pattern matches
-set hlsearch 
+set hlsearch
 nnoremap <leader><space> :nohlsearch<CR>
 set ignorecase
 set smartcase
@@ -223,12 +224,12 @@ set number
 set relativenumber
 set wrap "wrap lines, nowarp if not
 set showcmd
-set showmode 
-set cursorline  
+set showmode
+set cursorline
 
-set background=dark 
+set background=dark
 "colorscheme molokai
-colorscheme desert 
+colorscheme desert
 
 set fenc=utf8
 set fencs=utf8,gbk,gb18030,gb2312,ascii,big5,utf16,utf32
@@ -244,15 +245,15 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " For delimitMate
-let b:delimitMate_expand_cr = 2 
+let b:delimitMate_expand_cr = 2
 let b:delimitMate_expand_space=1
 let b:delimitMateBackspace=1
 
 " For python-mode
 "let g:pymode_lint = 0
 "let g:pymode_rope_completion = 0
-"let g:pymode_rope = 0 
-"let g:pymode_options_max_line_length =100 
+"let g:pymode_rope = 0
+"let g:pymode_options_max_line_length =100
 
 " Syntastic settings
 let g:syntastic_check_on_open = 1
@@ -346,7 +347,7 @@ if has("autocmd")
 " for python
 "    autocmd FileType python let g:pydiction_location='/home/wgwang/.vim/bundle/pydiction/complete-dict'
 "    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    au bufnewfile *.py :0r ~/.vim/templates/python.py 
+    au bufnewfile *.py :0r ~/.vim/templates/python.py
     au bufnewfile *.py call PythonNewfileTemplate()
     au FileType python setlocal wrap
 
@@ -358,7 +359,7 @@ if has("autocmd")
     au FileType cpp,hpp let g:ycm_global_ycm_extra_conf ='~/.vim/ycm_extra_conf/cpp.py'
     au FileType cpp,hpp setlocal foldmethod=syntax
 
-" for go programming language 
+" for go programming language
     au FileType go setlocal foldmethod=syntax
     au FileType go color desertEx
 
@@ -387,7 +388,7 @@ if has("autocmd")
 " For reStructuredText(rst)
     au bufnewfile *.rst :0r ~/.vim/templates/rst.rst
     au bufnewfile *.rst call RSTNewfileTemplate()
-    au FileType rst setlocal  tabstop=3 softtabstop=3 shiftwidth=3 
+    au FileType rst setlocal  tabstop=3 softtabstop=3 shiftwidth=3
 
 endif
 
