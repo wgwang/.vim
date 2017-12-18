@@ -1,7 +1,7 @@
 
 # Introduction
 
-VIM is a powerful editor with excellent plugins support for Linux(Unix), Apple Mac and MS Windows. But the naive  vim is trivial to some degree. For more productivity in programming, it needs careful configuration. And the procedure is time-consuming and tedious. 
+VIM is a powerful editor with excellent plugins support for Linux(Unix), Apple Mac and MS Windows. But the naive  vim is trivial to some degree. For more productivity in programming, it needs careful configuration. And the procedure is time-consuming and tedious.
 
 I have created this project to share my configuration of vim. Feel free to fork it as your need.
 
@@ -13,14 +13,14 @@ Sharing is significant spirit of hacker world.
 ## pylint and pylint-django
 for checking python3 and django. syntastic will use them
 
-## YouCompleteMe 
+## YouCompleteMe
 YouCompleteMe depends on clang, boost etc.
 
 edit `.vim/ycm_extra_conf/cpp.py` for the include path of g++/clang++ etc
 
 # Install instruction
 
-Some plugin require that the version of vim is 7.4. So if there is any error, please upgrade vim to 7.4. 
+The vim version is required by YouCompleteMe. See as YouCompleteMe
 
 
 ## Linux / Unix
@@ -94,14 +94,14 @@ nmap <Leader>is :IHS<CR>:A<CR>
 
 # golang (the go programming language)
 
-Make sure you have properly installed gocode before using vim for golang. 
+Make sure you have properly installed gocode before using vim for golang.
 
 ```bash
     go get github.com/nsf/gocode
     gocode --version
 ```
 
-If there is any error when running command above, please check the  envirement for golang. 
+If there is any error when running command above, please check the  envirement for golang.
 Properly setting GOROOT, GOPATH and PATH=$GOROOT/bin:$GOPATH/bin:$PATH is needed.
 
 
